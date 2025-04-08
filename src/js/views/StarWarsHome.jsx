@@ -1,6 +1,9 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import mandoaIMG from '../../img/Mandoa.png';
+import planetsIMG from '../../img/planetsIMG.png';
+import vehicleIMG from '../../img/vehicleIMG.png';
 
 import "../../styles/StarWarsHome.css";
 
@@ -11,43 +14,39 @@ export const StarWarsHome = () => {
 
   return (
     <div className="container">
+      <div className="row mt-5 justify-content-center">
 
-
-      <div className="row mt-5">
-
-
-        <div className=" col-sm-12 col-md-8 col-lg-4 my-5 d-flex justify-content-center  imgContainer">
-
-          <Link to={"/characters"} className="text-decoration-none">
-            <h6 className="imgText text-warning ">
-              <img src="https://starwars-visualguide.com/assets/img/categories/character.jpg " className="img-fluid" alt="CharsIMG" />
-              Characters</h6>
-          </Link>
-
-
-        </div>
-
-        <div className=" col-sm-12 col-md-8 col-lg-4 my-5 d-flex justify-content-center  imgContainer">
-          <Link to={"/Vehicles"} className="text-decoration-none">
-            <h6 className="imgText text-warning ">
-              <img src="https://starwars-visualguide.com/assets/img/categories/vehicles.jpg" className="img-fluid" alt="VehiclesIMG" />
-              Vehicles</h6>
+       {/* Characters */}
+        <div className="col-sm-12 col-md-6 col-lg-4 my-5 d-flex justify-content-center">
+          <Link to="/characters" className="text-decoration-none text-center">
+            <div className="d-flex flex-column align-items-center">
+              <img src={mandoaIMG} className="homeimg mb-2" alt="Mandoa" />
+              <h6 className="text-warning fw-bold">Characters</h6>
+            </div>
           </Link>
         </div>
 
-        <div className="col-sm-12 col-md-8 col-lg-4 my-5 d-flex justify-content-center  imgContainer">
-          <Link to={"/planets"} className="text-decoration-none">
-            <h6 className="imgText text-warning ">
-              <img src="https://starwars-visualguide.com/assets/img/categories/planets.jpg" className="img-fluid" alt="PlanetsIMG" />
-              Planets</h6>
-          </Link>
-
-        </div>
-
+      {/* Vehicles */}
+      <div className="col-sm-12 col-md-6 col-lg-4 my-5 d-flex justify-content-center">
+        <Link to="/vehicles" className="text-decoration-none text-center">
+          <div className="d-flex flex-column align-items-center">
+            <img src={vehicleIMG} className="homeimg mb-2" alt="Vehicle" />
+            <h6 className="text-warning fw-bold">Vehicles</h6>
+          </div>
+        </Link>
       </div>
-      <div className="stars"></div>
+
+    {/* Planets */}
+    <div className="col-sm-12 col-md-6 col-lg-4 my-5 d-flex justify-content-center">
+      <Link to="/planets" className="text-decoration-none text-center">
+        <div className="d-flex flex-column align-items-center">
+          <img src={planetsIMG} className="homeimg mb-2" alt="Planets" />
+          <h6 className="text-warning fw-bold">Planets</h6>
+        </div>
+      </Link>
     </div>
 
+  </div>
 
-  )
-}
+  <div className="stars"></div>
+</div>)}

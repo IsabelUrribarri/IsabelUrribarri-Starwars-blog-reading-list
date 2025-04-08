@@ -15,6 +15,7 @@ export const Characters = () => {
 
   useEffect(() => {
     actions.getAllCharsData()
+    console.log(store.charsData);
     setPage(store.charsData.length)
 
   }, [store.charsData.length]);
@@ -43,11 +44,14 @@ export const Characters = () => {
                   <button className="btn btn-warning ">Learn more!</button>
                 </Link>
 
-                <button className="btn btn-outline-danger mx-4" onClick={() => actions.addFavChar(e.name, e.url)}>
-                    {favListArr.includes(e.name) ? <i className="fas fa-heart"></i> : <i className="far fa-heart"></i>}
-                </button>
+                <button className="btn btn-outline-danger  mx-4" onClick={() => actions.addFavChar(e.name, e.url)} >
 
+                  {favListArr.includes(e.name) ? <i class="fa-solid fa-heart" ></i> : <i class="fa-regular fa-heart"></i>}
+
+                </button>
               </div>
+              console.log("URL:", e.url);
+
             </div>
 
           ))}
